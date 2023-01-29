@@ -8,6 +8,7 @@ To run the meshing workflows you will need:
 
     * A working `python >=3.6` installation.
     * The `numpy`, `scipy`, `scikit-image`, `inpoly` and `jigsawpy` packages (see `requirements.txt`).
+    * Paraview (or equiv.), for visualisation.
 
 ### `Defining a Configuration`
 
