@@ -6,17 +6,17 @@ A set of python scripts to generate unstructured meshes for the `RDycore` projec
 
 To run the meshing workflows you will need:
 
-    * A working `python >=3.6` installation.
-    * The `numpy`, `scipy`, `scikit-image`, `inpoly` and `jigsawpy` packages (see `requirements.txt`).
+    * A working python >=3.6 installation.
+    * The numpy, scipy, scikit-image, inpoly and jigsawpy packages (see requirements.txt).
     * Paraview (or equiv.), for visualisation.
 
 ### `Defining a Configuration`
 
 New meshes/domains can be added by defining a new top-level script. The `mid-atlantic.py` config. can be used as an example, defining the following routines to build inputs for the `jigsaw` meshing library:
 
-    * build_proj: setup a stereographic projection to map between local and spherical coordinate systems.
+    * build_proj: setup a stereographic projection to map between local/spherical coordinate systems.
     * build_geom: load a set of watershed and river geometry datasets to define the domain geometry.
-    * build_init: extract any "fixed-points" from the geometry to be included as mesh initial conditions.
+    * build_init: extract "fixed-points" from the geometry to be included as mesh initial conditions.
     * build_spac: define a nonuniform mesh-spacing function h(x) to control mesh resolution.
     * build_mesh: call the jigsaw library to build the corresponding unstructured mesh.
 
@@ -33,7 +33,7 @@ Development tasks (in no particular order):
 
     * Are we using the best datasets? Probably not: investigate VoTe, etc.
     * River geometry is typically pixel-aligned: is it useful to smooth raw polylines via splines, etc?
-    * What is an optimal set of resolution heuristics to resolve rivers, floodplains, steep topography, etc?
+    * Optimal set of resolution heuristics to resolve rivers, floodplains, steep topography, etc?
     * Quad-based (anisotropic) meshing for river channels.
     * Improved optimisation of cells/vertices attached to interior constraints.
 
