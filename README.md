@@ -14,11 +14,11 @@ To run the meshing workflows you will need:
 
 New meshes/domains can be added by defining a new top-level script. The `mid-atlantic.py` config. can be used as an example, defining the following routines to build inputs for the [`jigsaw` meshing library](https://github.com/dengwirda/jigsaw):
 
-- build_proj: make a stereographic projection to map local <=> spherical coord. systems.
-- build_geom: load watershed and river geometry datasets to define the domain geometry.
-- build_init: define "fixed-points" to be included as mesh initial conditions.
-- build_spac: define a nonuniform mesh-spacing function h(x) to control mesh resolution.
-- build_mesh: call jigsaw to build the corresponding unstructured mesh.
+- `build_proj`: make a stereographic projection to map local <=> spherical coord. systems.
+- `build_geom`: load watershed and river geometry datasets to define the domain geometry.
+- `build_init`: define "fixed-points" to be included as mesh initial conditions.
+- `build_spac`: define a nonuniform mesh-spacing function h(x) to control mesh resolution.
+- `build_mesh`: call `jigsaw` to build the corresponding unstructured mesh.
 
 The `mid_atlantic.py` example meshes a number of watersheds adjacent to the US mid-Atlantic coastline, using river geometry derived from the [HydroSHEDS](https://www.hydrosheds.org/) product, and watershed geometries provided by the [USGS National Hydrography Dataset](https://www.usgs.gov/national-hydrography/national-hydrography-dataset). Stream geometry is "burned-into" the mesh through the alignment of cell edges and mesh resolution is adapted to resolve stream-adjacent regions. Output mesh files are stored in the `msh` and `vtk` directories.
 
