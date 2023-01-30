@@ -1,5 +1,8 @@
+netCDF4
+fiona
+geojson
 numpy
 scipy
 scikit-image
 inpoly
-jigsawpy
+githubrelease
